@@ -15,11 +15,11 @@ These are the guidelines and patterns I use across my projects. They help Claude
 
 | Plugin | Skill | Cmds | What it covers |
 |--------|-------|:----:|----------------|
-| **[rust](plugins/rust/)** | `rust-expert` | 5 | Ownership, async, unsafe, error handling, type design, anti-patterns |
-| **[esp32-cpp](plugins/esp32-cpp/)** | `esp32-expert` | 4 | FreeRTOS, ESP-IDF/PlatformIO, peripherals, memory, all ESP32 variants |
-| **[python-backend](plugins/python-backend/)** | `python-backend-expert` | 3 | Litestar, FastAPI, SQLAlchemy, hexagonal architecture, async patterns |
-| **[swiftui](plugins/swiftui/)** | `swiftui-expert` | 1 | iOS/macOS/visionOS patterns, Liquid Glass, accessibility |
-| **[dead-code](plugins/dead-code/)** | `dead-code-expert` | 2 | Unused imports, functions, classes, duplicates, any language |
+| **[rust](plugins/rust/)** | `rust` | 5 | Ownership, async, unsafe, error handling, type design, anti-patterns |
+| **[esp32-cpp](plugins/esp32-cpp/)** | `esp32` | 4 | FreeRTOS, ESP-IDF/PlatformIO, peripherals, memory, all ESP32 variants |
+| **[python-backend](plugins/python-backend/)** | `python-backend` | 3 | Litestar, FastAPI, SQLAlchemy, hexagonal architecture, async patterns |
+| **[swiftui](plugins/swiftui/)** | `swiftui` | 1 | iOS/macOS/visionOS patterns, Liquid Glass, accessibility |
+| **[dead-code](plugins/dead-code/)** | `dead-code` | 2 | Unused imports, functions, classes, duplicates, any language |
 
 ## Install
 
