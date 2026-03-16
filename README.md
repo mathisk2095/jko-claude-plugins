@@ -6,10 +6,20 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/plugins-5-orange" alt="Plugins: 5">
   <img src="https://img.shields.io/badge/commands-15-green" alt="Commands: 15">
-  <img src="https://img.shields.io/badge/Claude_Code-plugin_marketplace-8A2BE2" alt="Claude Code Plugin Marketplace">
 </p>
 
-These are the guidelines and patterns I use across my projects. They help Claude review code, catch mistakes, and stay consistent with how I actually want things built. Each plugin covers a stack I work in.
+These are the guidelines and patterns I use across my projects. They help coding agents review code, catch mistakes, and stay consistent with how I actually want things built. Each plugin covers a stack I work in.
+
+Skills use the shared [Agent Skills specification](https://developers.openai.com/codex/skills/) — install as full plugins or individual skills.
+
+<h4 align="center">Works with</h4>
+
+<p align="center">
+  <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=claude&logoColor=fff" alt="Claude Code"></a>
+  <a href="#github-copilot-cli"><img src="https://img.shields.io/badge/Copilot_CLI-000?style=for-the-badge&logo=githubcopilot&logoColor=fff" alt="GitHub Copilot CLI"></a>
+  <a href="#openai-codex-cli"><img src="https://img.shields.io/badge/Codex_CLI-412991?style=for-the-badge&logo=openai&logoColor=fff" alt="OpenAI Codex CLI"></a>
+  <a href="#opencode"><img src="https://img.shields.io/badge/⌬_OpenCode-18181B?style=for-the-badge" alt="OpenCode"></a>
+</p>
 
 ## Plugins
 
@@ -22,6 +32,8 @@ These are the guidelines and patterns I use across my projects. They help Claude
 | **[dead-code](plugins/dead-code/)** | `dead-code` | 2 | Unused imports, functions, classes, duplicates, any language |
 
 ## Install
+
+### Claude Code
 
 ```bash
 # Add the marketplace
@@ -41,7 +53,44 @@ Or try one without installing:
 claude --plugin-dir /path/to/jko-claude-plugins/plugins/rust
 ```
 
+### GitHub Copilot CLI
+
+```bash
+# Add the marketplace
+/plugin marketplace add johnkozaris/jko-claude-plugins
+
+# Install a plugin
+/plugin install rust@jko-claude-plugins
+```
+
+### OpenAI Codex CLI
+
+Codex installs skills directly — no marketplace needed.
+
+```bash
+# Inside Codex, use the built-in skill installer
+$skill-installer --repo johnkozaris/jko-claude-plugins --path plugins/rust/skills/rust-expert
+$skill-installer --repo johnkozaris/jko-claude-plugins --path plugins/esp32-cpp/skills/esp32-expert
+$skill-installer --repo johnkozaris/jko-claude-plugins --path plugins/python-backend/skills/python-backend-expert
+$skill-installer --repo johnkozaris/jko-claude-plugins --path plugins/swiftui/skills/swiftui-expert
+$skill-installer --repo johnkozaris/jko-claude-plugins --path plugins/dead-code/skills/dead-code-expert
+```
+
+### OpenCode
+
+Install skills via [skills.sh](https://skills.sh) or copy manually.
+
+```bash
+# Via skills.sh (auto-detects installed agents)
+npx skills add johnkozaris/jko-claude-plugins --full-depth
+
+# Or copy a skill directory manually
+cp -r plugins/rust/skills/rust-expert ~/.config/opencode/skills/rust-expert
+```
+
 ## Commands
+
+Commands are available in Claude Code and Copilot CLI. Codex and OpenCode get the skills and references but not slash commands.
 
 ### Rust
 
@@ -85,9 +134,18 @@ claude --plugin-dir /path/to/jko-claude-plugins/plugins/rust
 
 ## How it works
 
-Each plugin has a SKILL.md that tells Claude what to look for and a bunch of reference files with the actual patterns, anti-patterns, and examples. Claude only loads the references it needs for the current task so it doesn't waste context.
+Each plugin has a SKILL.md that tells the agent what to look for and a bunch of reference files with the actual patterns, anti-patterns, and examples. The agent only loads the references it needs for the current task so it doesn't waste context.
 
 Hooks run automatically on file saves. `cargo check` after editing `.rs` files, flagging common mistakes in Python/C++ edits, that kind of thing.
+
+### Cross-tool compatibility
+
+| Feature | Claude Code | Copilot CLI | Codex CLI | OpenCode |
+|---------|:-----------:|:-----------:|:---------:|:--------:|
+| Skills + references | yes | yes | yes | yes |
+| Slash commands | yes | yes | -- | -- |
+| Hooks | yes | yes | -- | -- |
+| Plugin marketplace | yes | yes | -- | -- |
 
 ## Contributing
 
