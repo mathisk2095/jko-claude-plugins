@@ -96,22 +96,6 @@
         "refactoring",
         "code-quality"
       ]
-    },
-    {
-      "name": "web-interact",
-      "source": "./plugins/web-interact",
-      "description": "Browser automation — discover interactive elements, click, type, fill forms, screenshots, automate web apps",
-      "version": "2.0.0",
-      "category": "tools",
-      "tags": [
-        "browser",
-        "automation",
-        "web",
-        "interaction",
-        "scraping",
-        "testing",
-        "screenshot"
-      ]
     }
   ]
 }
